@@ -49,3 +49,14 @@ export const deleteTable = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+export const getAvailableTables = async (req, res) => {
+  try {
+    const availableTables = await TableModel.findAll({
+      where: { status: 'disponible' }
+    });
+    res.json(availableTables);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
