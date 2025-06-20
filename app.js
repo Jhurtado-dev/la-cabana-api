@@ -6,6 +6,7 @@ import userRouter from "./routes/userRoutes.js";
 import tableRouter from "./routes/tableRoutes.js";
 import foodRouter from "./routes/foodRoutes.js";
 import ingredientRoutes from "./routes/ingredientRoutes.js";
+import extrasRoutes from "./routes/extrasRoutes.js";
 
 dotenv.config();
 const app = express();
@@ -16,6 +17,7 @@ app.use('/api/users', userRouter);
 app.use('/api/tables', tableRouter);
 app.use('/api/food', foodRouter);
 app.use('/api/ingredients', ingredientRoutes);
+app.use('/api/extras', extrasRoutes);
 
 
 try {
